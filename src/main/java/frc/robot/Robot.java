@@ -19,14 +19,25 @@ import subsystems.DriveConvoy;
  * project.
  */
 public class Robot extends TimedRobot {
+
+  
   /**
    * This function is run when the robot is first started up and should be used
-   * for any initialization code.
+   * for any initialization code
    */
+<<<<<<< HEAD
   private Joystick sillyStick = new Joystick(0);
   private DriveConvoy DriveConvoy = new DriveConvoy();
 
 
+=======
+  Private JoystickButton aButton = new JoystickButton(sillyStick, buttonNum);
+  
+  IntakeIn suckIn = new IntakeIn();
+
+  aButton.whileheld(suckIn);
+  
+>>>>>>> c13f072a4a3eb0fbf7909c0b388cacd515c349f8
   @Override
   public void robotInit() {
   }
