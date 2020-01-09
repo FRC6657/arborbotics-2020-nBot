@@ -17,10 +17,18 @@ import edu.wpi.first.wpilibj.TimedRobot;
  * project.
  */
 public class Robot extends TimedRobot {
+
+  
   /**
    * This function is run when the robot is first started up and should be used
    * for any initialization code
    */
+  Private JoystickButton aButton = new JoystickButton(sillyStick, buttonNum);
+  
+  IntakeIn suckIn = new IntakeIn();
+
+  aButton.whileheld(suckIn);
+  
   @Override
   public void robotInit() {
   }
