@@ -7,7 +7,9 @@
 
 package frc.robot;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
+import subsystems.DriveConvoy;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -21,6 +23,10 @@ public class Robot extends TimedRobot {
    * This function is run when the robot is first started up and should be used
    * for any initialization code.
    */
+  private Joystick sillyStick = new Joystick(0);
+  private DriveConvoy DriveConvoy = new DriveConvoy();
+
+
   @Override
   public void robotInit() {
   }
@@ -38,7 +44,11 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void teleopPeriodic() {
+  public void teleopPeriodic() {if(sillyStick.getRawAxis(1)<-0.1){}
+
+
+
+
   }
 
   @Override

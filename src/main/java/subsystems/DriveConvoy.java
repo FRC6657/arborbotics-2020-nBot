@@ -7,6 +7,7 @@
 
 package subsystems;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
@@ -18,17 +19,26 @@ public class DriveConvoy extends Subsystem {
   // here. Call these from Commands.
 
   //Motors
- private WPI_TalonSRX motorFrontLeft=new WPI_TalonSRX(1);
- private WPI_TalonSRX motorFrontRight=new WPI_TalonSRX(2);
- private WPI_VictorSPX motorBackLeft=new WPI_VictorSPX(3);
- private WPI_VictorSPX motorBackRight=new WPI_VictorSPX(4);
+ 
+  public void DriveConvoy(){
+    final WPI_TalonSRX motorFrontLeft = new WPI_TalonSRX(1);
+ final WPI_TalonSRX motorFrontRight=new WPI_TalonSRX(2);
+  final WPI_VictorSPX motorBackLeft=new WPI_VictorSPX(3);
+ final WPI_VictorSPX motorBackRight=new WPI_VictorSPX(4);
+}
 
   @Override
-  public void initDefaultCommand() {
+  public void initDefaultCommand() { 
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
 
-  
-  }
-  
+   
+  } 
+
+    public void robotInit(){
+
+
+
+    }
+    
 }
