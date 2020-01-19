@@ -5,30 +5,31 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.Subsystems;
 
-import edu.wpi.first.wpilibj.command.InstantCommand;
-import frc.robot.subsystems.IntakeOuttake;
+import frc.robot.RobotMap;
 
-/**
- * Add your docs here.
- */
-public class IntakeIn extends InstantCommand {
-  /**
-   * Add your docs here.
-   */
-  public IntakeIn() {
-    super();
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-  }
+import edu.wpi.first.wpilibj.command.Subsystem;
 
-  // Called once when the command executes
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+public class Gun extends Subsystem {
+
+  private WPI_TalonSRX motor = new WPI_TalonSRX(RobotMap.motorGunID);
+
+   public Gun() {
+   }
+
+   public void fire(double speed) {
+    motor.set(speed);
+   }
+
+   public void stop() {
+     motor.set(0);
+   }
+
   @Override
-  protected void initialize() {
-
-    IntakeOuttake.runIntake();
+  public void initDefaultCommand() {
 
   }
-
 }

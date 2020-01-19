@@ -7,9 +7,13 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.TimedRobot;
-import subsystems.DriveConvoy;
+import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+
+import frc.robot.Subsystems.Gun;
+import frc.robot.Subsystems.Drivetrain;
+import frc.robot.OI;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -20,34 +24,49 @@ import subsystems.DriveConvoy;
  */
 public class Robot extends TimedRobot {
 
+  public static Gun gun = new Gun();
+  public static Drivetrain driveTrain = new Drivetrain();
   
-  /**
-   * This function is run when the robot is first started up and should be used
-   * for any initialization code
-   */
-<<<<<<< HEAD
-  private Joystick sillyStick = new Joystick(0);
-  private DriveConvoy DriveConvoy = new DriveConvoy();
+  public static OI oi;
 
+  public Robot() {
+    gun = new Gun();
+    oi = new OI();
+    
+    SmartDashboard.putNumber("Left Encoder", driveTrain.getEncoderLeft());
+    SmartDashboard.putNumber("Right Encoder", driveTrain.getEncoderRight());
+    SmartDashboard.putNumber("Distance", driveTrain.getDistance());
+  }
 
-=======
-  Private JoystickButton aButton = new JoystickButton(sillyStick, buttonNum);
-  
-  IntakeIn suckIn = new IntakeIn();
-
-  aButton.whileheld(suckIn);
-  
->>>>>>> c13f072a4a3eb0fbf7909c0b388cacd515c349f8
   @Override
   public void robotInit() {
   }
 
   @Override
+  public void robotPeriodic() {
+    SmartDashboard.putNumber("Left Encoder", driveTrain.getEncoderLeft());
+    SmartDashboard.putNumber("Right Encoder", driveTrain.getEncoderRight());
+    SmartDashboard.putNumber("Distance", driveTrain.getDistance());
+  }
+
+  @Override
+  public void disabledInit() {
+    driveTrain.reset();
+  }
+
+  @Override
+  public void disabledPeriodic() {
+    Scheduler.getInstance().run();
+  }
+
+  @Override
   public void autonomousInit() {
+    driveTrain.reset();
   }
 
   @Override
   public void autonomousPeriodic() {
+    Scheduler.getInstance().run();
   }
 
   @Override
@@ -55,11 +74,8 @@ public class Robot extends TimedRobot {
   }
 
   @Override
-  public void teleopPeriodic() {if(sillyStick.getRawAxis(1)<-0.1){}
-
-
-
-
+  public void teleopPeriodic() {
+    Scheduler.getInstance().run();
   }
 
   @Override
