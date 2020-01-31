@@ -7,18 +7,20 @@
 
 package frc.robot.Subsystems;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-/**
- * Add your docs here.
- */
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
+
 public class ScissorLift extends Subsystem {
-  // Put methods for controlling this subsystem
-  // here. Call these from Commands.
+  private WPI_TalonSRX motor = new WPI_TalonSRX(RobotMap.motorScissorLiftID);
+
+public void run(double speed){
+  motor.set(speed);
+}
 
   @Override
   public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+    
   }
 }

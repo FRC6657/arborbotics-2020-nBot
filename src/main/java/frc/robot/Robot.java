@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import frc.robot.Subsystems.Gun;
 import frc.robot.Subsystems.Intake;
+import frc.robot.Subsystems.ScissorLift;
 import frc.robot.Subsystems.ControlKey;
 import frc.robot.Subsystems.Drivetrain;
 import frc.robot.OI;
@@ -30,6 +31,7 @@ public class Robot extends TimedRobot {
   public static Drivetrain driveTrain = new Drivetrain();
   public static Intake intake = new Intake();
   public static ControlKey controlKey = new ControlKey();
+  public static ScissorLift scissorLift = new ScissorLift();
 
   public static OI oi;
 

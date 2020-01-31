@@ -7,13 +7,14 @@
 
 package frc.robot;
 
-
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.Commands.FireGun;
+import frc.robot.Commands.RunScissorLift;
 import frc.robot.Commands.Suck;
 import frc.robot.Commands.ControlKeyPivot;
 import frc.robot.Commands.ControlKeyDrive;
+
 
 public class OI {
 
@@ -24,6 +25,8 @@ public class OI {
   public JoystickButton controlKeyPivot1;
   public JoystickButton controlKeyPivot2;
   public JoystickButton controlKeyDrive;
+  public JoystickButton scissorLiftDrive1;
+  public JoystickButton scissorLiftDrive2;
 
   public OI() {
     stick = new Joystick(0);
@@ -33,6 +36,8 @@ public class OI {
 	controlKeyDrive = new JoystickButton(stick, 5);
 	controlKeyPivot1 = new JoystickButton(stick, 3);
 	controlKeyPivot2 = new JoystickButton(stick, 4);
+	scissorLiftDrive1 = new JoystickButton(stick, 11);
+	scissorLiftDrive2 = new JoystickButton(stick, 12);
 
     FireGun fg = new FireGun();
 	fireGun.whileHeld(fg);
@@ -48,6 +53,13 @@ public class OI {
 
 	ControlKeyPivot ckp2 = new ControlKeyPivot(-0.3);
 	controlKeyPivot2.whileHeld(ckp2);
+
+	RunScissorLift rsl1 = new RunScissorLift(0.4);
+	scissorLiftDrive1.whileHeld(rsl1);
+
+	RunScissorLift rsl2 = new RunScissorLift(-0.4);
+	scissorLiftDrive2.whileHeld(rsl2);
+	
   }
 
   public double getArcadeSpeed() { //Gets modified joystick speed
