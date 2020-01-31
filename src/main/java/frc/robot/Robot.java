@@ -12,6 +12,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import frc.robot.Subsystems.Gun;
+import frc.robot.Subsystems.Intake;
+import frc.robot.Subsystems.ControlKey;
 import frc.robot.Subsystems.Drivetrain;
 import frc.robot.OI;
 
@@ -26,11 +28,12 @@ public class Robot extends TimedRobot {
 
   public static Gun gun = new Gun();
   public static Drivetrain driveTrain = new Drivetrain();
-  
+  public static Intake intake = new Intake();
+  public static ControlKey controlKey = new ControlKey();
+
   public static OI oi;
 
   public Robot() {
-    gun = new Gun();
     oi = new OI();
     
     SmartDashboard.putNumber("Left Encoder", driveTrain.getEncoderLeft());

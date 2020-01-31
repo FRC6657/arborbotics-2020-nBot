@@ -11,7 +11,7 @@ public class ArcadeDrive extends Command {
 
   @Override
   protected void execute() {
-    Robot.driveTrain.arcadeDrive(Robot.oi.getArcadeSpeed(), Robot.oi.getArcadeRoationThrottle());
+    Robot.driveTrain.arcadeDrive(Robot.oi.getArcadeSpeed(), Robot.oi.getArcadeRotation());
   }
 
   @Override
