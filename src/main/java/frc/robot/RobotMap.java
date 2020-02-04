@@ -9,7 +9,8 @@ public class RobotMap {
 	public static int motorIntakeID = 6;
 	public static int motorControlKeyPivotID = 7;
 	public static int motorControlKeyDriverID = 8;
-	public static int motorScissorLiftID = 9;
+	//public static int motorScissorLiftID = 9;
+	public static int motorWinchID = 9;
 	
 	public static int joystickID = 0;
 	

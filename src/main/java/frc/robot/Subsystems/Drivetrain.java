@@ -20,10 +20,10 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 public class Drivetrain extends Subsystem {
   
   //Motors
-  private WPI_VictorSPX motorFrontLeft = new WPI_VictorSPX(RobotMap.motorFrontLeftID); 
-  private WPI_TalonSRX motorBackLeft = new WPI_TalonSRX(RobotMap.motorBackLeftID);	
-  private WPI_VictorSPX motorFrontRight = new WPI_VictorSPX(RobotMap.motorFrontRightID);
-  private WPI_TalonSRX motorBackRight = new WPI_TalonSRX(RobotMap.motorBackRightID);
+  private WPI_TalonSRX motorFrontLeft = new WPI_TalonSRX(RobotMap.motorFrontLeftID); 
+  private WPI_VictorSPX motorBackLeft = new WPI_VictorSPX(RobotMap.motorBackLeftID);	
+  private WPI_TalonSRX motorFrontRight = new WPI_TalonSRX(RobotMap.motorFrontRightID);
+  private WPI_VictorSPX motorBackRight = new WPI_VictorSPX(RobotMap.motorBackRightID);
   private DifferentialDrive drive;
 
   //Encoders

@@ -5,22 +5,35 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.Subsystems;
+package frc.robot.Commands;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import edu.wpi.first.wpilibj.command.Command;
+import frc.robot.Robot;
 
-import edu.wpi.first.wpilibj.command.Subsystem;
-import frc.robot.RobotMap;
-
-public class ScissorLift extends Subsystem {
-  //private WPI_TalonSRX motor = new WPI_TalonSRX(RobotMap.motorScissorLiftID);
-
-  public void run(double speed){
-    //motor.set(speed);
+public class SolIn extends Command {
+  public SolIn() {
+    requires(Robot.graplingHook);
   }
 
   @Override
-  public void initDefaultCommand() {
-    
+  protected void initialize() {
+  }
+
+  @Override
+  protected void execute() {
+    Robot.graplingHook.solReverse();
+  }
+
+  @Override
+  protected boolean isFinished() {
+    return false;
+  }
+
+  @Override
+  protected void end() {
+  }
+
+  @Override
+  protected void interrupted() {
   }
 }

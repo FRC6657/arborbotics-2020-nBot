@@ -16,6 +16,7 @@ import frc.robot.Subsystems.Intake;
 import frc.robot.Subsystems.ScissorLift;
 import frc.robot.Subsystems.ControlKey;
 import frc.robot.Subsystems.Drivetrain;
+import frc.robot.Subsystems.GraplingHook;
 import frc.robot.OI;
 
 /**
@@ -32,6 +33,7 @@ public class Robot extends TimedRobot {
   public static Intake intake = new Intake();
   public static ControlKey controlKey = new ControlKey();
   public static ScissorLift scissorLift = new ScissorLift();
+  public static GraplingHook graplingHook = new GraplingHook();
 
   public static OI oi;
 
